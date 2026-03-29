@@ -50,6 +50,11 @@
             margin: 0 0 15px;
             text-wrap: balance;
         }
+        .hero h2 {
+            font-size: clamp(1rem, 3.5vw, 1.3rem);
+            font-weight: 300;
+            opacity: 0.9;
+        }
 
         /* Contenedor Principal */
         .container { 
@@ -65,13 +70,13 @@
             padding: 25px; 
             box-shadow: 0 2px 12px rgba(0,0,0,0.1); 
             margin-bottom: 25px;
-            overflow: hidden;
         }
         h3 { 
             color: var(--primary); 
             border-left: 4px solid var(--accent); 
             padding-left: 10px;
             margin-top: 0;
+            font-size: 1.25rem;
         }
 
         /* Grid de Temáticas */
@@ -80,34 +85,20 @@
             gap: 20px; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
         }
+        .grid h4 { 
+            color: var(--accent); 
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        ul { padding-left: 18px; margin: 10px 0; }
+        ul li { margin-bottom: 5px; font-size: 0.95rem; }
 
-        /* Mapa Responsivo */
-        .map-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-            height: 0;
-            overflow: hidden;
+        /* Cuadros de Información Especial */
+        .info-box {
+            background: #e0f2f1;
             border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .btn-map {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
+            padding: 15px;
+            margin: 15px 0;
         }
 
         /* Botón Flotante para Móvil */
@@ -126,7 +117,9 @@
             gap: 10px;
             font-weight: bold;
             z-index: 1000;
+            transition: transform 0.2s;
         }
+        .fab-download:active { transform: scale(0.95); }
 
         /* Logos */
         .logos-flex {
@@ -137,9 +130,17 @@
             align-items: center;
             padding: 20px 0;
         }
-        .logos-flex img { max-width: 120px; height: auto; }
+        .logos-flex img { max-width: 130px; height: auto; filter: grayscale(20%); }
 
-        @media (min-width: 769px) { .fab-download { display: none; } }
+        /* Responsive */
+        @media (min-width: 769px) {
+            .fab-download { display: none; } /* Esconder en PC */
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 40px 10px; }
+            section.card { padding: 15px; }
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -150,7 +151,7 @@
 
     <header class="hero">
         <h1>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS</h1>
-        <p>10 al 13 de noviembre del 2026 • ESIME Zacatenco</p>
+        <h2>10 al 13 de noviembre del 2026 • ESIME Zacatenco</h2>
     </header>
 
     <a href="CINIES2026plantillaV3.docx" class="fab-download" download>
@@ -159,30 +160,64 @@
 
     <main class="container">
         <section class="card">
-            <h3>SEDE Y UBICACIÓN</h3>
-            <p><strong>ESIME Unidad Zacatenco</strong><br>
-            Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, CDMX.</p>
-            
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3761.320431327!2d-99.1352116!3d19.4975311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b11c17aa73%3A0xa8d7c598b970d3ee!2sESIME%20-%20Escuela%20Superior%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20y%20El%C3%A9ctrica%20Unidad%20Zacatenco!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+            <h3>OBJETIVO</h3>
+            <p>Reunir a especialistas y estudiantes de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas para discutir temas de vanguardia y propuestas educativas.</p>
+        </section>
+
+        <section class="card">
+            <h3>TEMÁTICAS PRINCIPALES</h3>
+            <div class="grid">
+                <div>
+                    <h4>Eléctrica</h4>
+                    <ul>
+                        <li>Alta Tensión</li>
+                        <li>Sistemas de Potencia</li>
+                        <li>Redes Inteligentes</li>
+                    </ul>
+                    <h4>Mecánica</h4>
+                    <ul>
+                        <li>Aerodinámica</li>
+                        <li>Manufactura</li>
+                        <li>Vibraciones</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Sistemas y Energía</h4>
+                    <ul>
+                        <li>Sistemas Complejos</li>
+                        <li>Eficiencia Energética</li>
+                        <li>Hidrógeno y Biofuel</li>
+                    </ul>
+                    <h4>Electrónica y Telecom</h4>
+                    <ul>
+                        <li>Fotónica</li>
+                        <li>Redes de Datos</li>
+                        <li>Procesamiento de Señales</li>
+                    </ul>
+                </div>
             </div>
-            
-            <a href="https://maps.app.goo.gl/ChIJc6oXHLH50YUR7tNwuZjF16g" target="_blank" class="btn-map">
-                📍 Abrir en Google Maps
-            </a>
         </section>
 
         <section class="card">
             <h3>FECHAS IMPORTANTES</h3>
-            <ul>
-                <li><strong>29 de junio:</strong> Límite recepción artículos</li>
-                <li><strong>24 de agosto:</strong> Notificación de aceptación</li>
-                <li><strong>11 de septiembre:</strong> Versión final</li>
-            </ul>
+            <div class="info-box">
+                <ul style="list-style: none; padding: 0;">
+                    <li>📅 <strong>29 de junio:</strong> Límite recepción artículos</li>
+                    <li>📅 <strong>24 de agosto:</strong> Notificación de aceptación</li>
+                    <li>📅 <strong>11 de septiembre:</strong> Versión final</li>
+                </ul>
+            </div>
+            <p>Envío de trabajos a los correos institucionales de cada área (Eléctrica, Mecánica, Sistemas, etc.).</p>
+        </section>
+
+        <section class="card">
+            <h3>COMITÉ Y ORGANIZACIÓN</h3>
+            <p><strong>Dr. Mauro Alberto Enciso Aguilar</strong> - Director ESIME Zacatenco</p>
+            <p><strong>Dr. Adolfo Fontes</strong> - Coordinador General</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+            <p style="text-align: center; font-size: 0.9rem; color: var(--muted);">
+                Invitado Especial: Instituto de Física de la BUAP
+            </p>
         </section>
 
         <div class="logos-flex">
