@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +6,7 @@
     <title>XXIV CNIES 2026 - ESIME Zacatenco</title>
     <style>
         :root {
-            --bg: #f0f2f5;
+            --bg: #f5f7fa;
             --primary: #004d40;
             --accent: #009688;
             --text: #212121;
@@ -23,55 +22,39 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        .top-banner {
-            background: #fff;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
-        }
-        .top-banner img { max-width: 100%; width: 350px; height: auto; }
+        .top-banner { background: #fff; padding: 15px; text-align: center; border-bottom: 3px solid var(--primary); }
+        .top-banner img { max-width: 100%; width: 380px; height: auto; }
         .hero {
             background: linear-gradient(135deg, rgba(0,77,64,0.9), rgba(0,121,107,0.7)), url('fondo.png') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+            color: white; text-align: center; padding: 50px 20px;
         }
         .hero h1 { font-size: clamp(1.4rem, 6vw, 2.5rem); margin: 0 0 10px; text-wrap: balance; }
         .container { max-width: 1100px; margin: 0 auto; padding: 20px 15px; }
         section.card { 
-            background: var(--card); 
-            border-radius: 12px; 
-            padding: 25px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
-            margin-bottom: 25px;
+            background: var(--card); border-radius: 12px; padding: 25px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 25px;
             word-wrap: break-word;
         }
         h3 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 12px; margin-top: 0; text-transform: uppercase; }
-        h4 { color: var(--accent); margin: 15px 0 5px; }
+        h4 { color: var(--accent); margin: 15px 0 8px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         ul { padding-left: 20px; }
         a { color: var(--accent); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
         .comite-box { 
-            border: 2px solid var(--primary); 
-            border-radius: 8px; 
-            padding: 18px; 
-            background: rgba(0,77,64,0.03); 
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            border: 1px solid #ddd; border-radius: 8px; padding: 18px; 
+            background: #fafafa; margin-bottom: 20px; font-size: 0.95rem;
         }
         .fab-download {
             position: fixed; bottom: 25px; right: 20px; background: var(--primary);
             color: white; padding: 14px 22px; border-radius: 50px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; z-index: 1000;
         }
-        .map-wrapper { position: relative; padding-bottom: 50%; height: 0; overflow: hidden; border-radius: 10px; margin: 15px 0; border: 1px solid #ddd; }
+        .map-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 15px 0; border: 1px solid #ddd; }
         .map-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .btn-link { display: inline-block; background: var(--accent); color: white; padding: 10px 18px; border-radius: 6px; margin-top: 5px; }
         .logos-container { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; align-items: center; padding: 30px 0; }
-        .logos-container img { max-width: 120px; height: auto; }
+        .logos-container img { max-width: 130px; height: auto; }
         @media (min-width: 769px) { .fab-download { display: none; } }
-        @media (max-width: 480px) { .map-wrapper { padding-bottom: 75%; } }
     </style>
 </head>
 <body>
@@ -86,19 +69,24 @@
     </header>
 
     <a href="CINIES2026plantillaV3.docx" class="fab-download" download>
-        <span>📄 Plantilla</span>
+        <span>📄 Descargar Plantilla</span>
     </a>
 
     <main class="container">
         <section class="card">
             <h3>OBJETIVO</h3>
-            <p>El CNIES XXIV se realiza con el propósito de reunir a especialistas y estudiantes nacionales e internacionales de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas.</p>
+            <p>El propósito es reunir a especialistas y estudiantes nacionales e internacionales de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas para discutir temas actuales y propuestas educativas.</p>
+            <h4>ACTIVIDADES</h4>
+            <ul>
+                <li>Ponencias</li>
+                <li>Carteles</li>
+            </ul>
         </section>
 
         <section class="card">
             <h3>INFORMACIÓN PARA AUTORES</h3>
-            <p>Los trabajos deberán enviarse a los correos electrónicos correspondientes según la temática:</p>
-            <div class="grid" style="margin-top:15px;">
+            <p>Enviar artículos (PDF/Word, máx. 4 páginas) a los correos según el área temática:</p>
+            <div class="grid">
                 <div>
                     <strong>• Eléctrica:</strong> <a href="mailto:cniescelectrica@ipn.mx">cniescelectrica@ipn.mx</a><br>
                     <strong>• Mecánica:</strong> <a href="mailto:cniescmecanica@ipn.mx">cniescmecanica@ipn.mx</a><br>
@@ -107,45 +95,49 @@
                 <div>
                     <strong>• Energía:</strong> <a href="mailto:cniescenergia@ipn.mx">cniescenergia@ipn.mx</a><br>
                     <strong>• Electrónica:</strong> <a href="mailto:cniescelectronica@ipn.mx">cniescelectronica@ipn.mx</a><br>
-                    <strong>• Telecomunicaciones:</strong> <a href="mailto:cniesctelecom@ipn.mx">cniesctelecom@ipn.mx</a>
+                    <strong>• Telecom:</strong> <a href="mailto:cniesctelecom@ipn.mx">cniesctelecom@ipn.mx</a>
                 </div>
             </div>
-            <p style="margin-top:20px;">
-                <a href="CINIES2026plantillaV3.docx" class="btn-link" download>Descargar Plantilla (.docx)</a>
-            </p>
+            <div style="margin-top:20px; background:#e8f5e9; padding:15px; border-radius:8px;">
+                <strong>Fechas Importantes:</strong> 29 jun (Recepción), 24 ago (Aceptación), 11 sep (Versión final).
+            </div>
         </section>
 
         <section class="card">
             <h3>DIRECTORIO</h3>
             <div class="comite-box">
-                <strong>Dr. Arturo Reyes Sandoval</strong> - Director General del IPN<br>
-                <strong>M. en C. Ismael Jaidar Monter</strong> - Secretario General del IPN<br>
-                <strong>M. en E. N. A. María Isabel Rojas Ruíz</strong> - Secretaria Académica del IPN<br>
-                <strong>Dra. Martha Leticia Vázquez González</strong> - Secretaria de Investigación y Posgrado del IPN<br>
-                <strong>Dr. Mauro Alberto Enciso Aguilar</strong> - Director de la ESIME Zacatenco
+                Dr. Arturo Reyes Sandoval (Dir. Gral. IPN) • M. en C. Ismael Jaidar Monter (Sec. Gral.) • M. en E. N. A. María Isabel Rojas Ruíz (Sec. Académica) • Dra. Martha Leticia Vázquez González (Sec. Investigación) • Dr. Mauro Alberto Enciso Aguilar (Dir. ESIME Zacatenco)
             </div>
 
             <h3>COMITÉ ORGANIZADOR</h3>
             <div class="comite-box">
-                <strong>Dr. Eloy Ramírez García</strong> - Jefe de la SEPI<br>
-                <strong>Dr. Adolfo Fontes</strong> - Coordinador General CNIES XXIV<br><br>
+                <strong>Coordinación General:</strong> Dr. Eloy Ramírez García (Jefe SEPI) y Dr. Adolfo Fontes.<br><br>
                 <strong>Coordinadores de Área:</strong><br>
-                • Eléctrica: Dr. Fermín Pascual Espino Cortés<br>
-                • Mecánica: Dr. German Anibal Rodríguez Castro<br>
-                • Sistemas: Dr. Miguel Ángel Martinez Cruz<br>
-                • Energía: Dr. Oscar Carranza Castillo<br>
-                • Electrónica: Dr. Erick Eugenio Linares Vallejo<br>
-                • Telecom: M. en C. Alejandro Trejo León
+                Dr. Fermín Pascual (Eléctrica), Dr. German Rodríguez (Mecánica), Dr. Miguel Martínez (Sistemas), Dr. Oscar Carranza (Energía), Dr. Erick Linares (Electrónica), M. en C. Alejandro Trejo (Telecom).
             </div>
-            <p><strong>Apoyo Técnico:</strong> Ing. Ricardo Martínez, Ing. Ernesto Treviña, Ing. Jenny González, Ing. Abdel Salto y Comité Estudiantil IEEE.</p>
+
+            <div class="comite-box" style="border-color: var(--accent);">
+                <strong>Comité Estudiantil IEEE (Apoyo Técnico):</strong><br>
+                Ing. Ricardo Martínez Martínez • Ing. Ernesto Treviña Dimas • Ing. Jenny Jazmín González González • Ing. Abdel Salto Gutiérrez
+            </div>
+            <p style="text-align:center;"><em>Exposición Industrial • Invitado Especial: Instituto de Física BUAP</em></p>
         </section>
 
         <section class="card">
-            <h3>UBICACIÓN</h3>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.339655848529!2d-99.1337424242637!3d19.505510681792484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b23c17aa73%3A0xa8d7c598b970d3ee!2sESIME%20-%20Escuela%20Superior%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20y%20El%C3%A9ctrica%20Unidad%20Zacatenco!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" loading="lazy"></iframe>
+            <div class="grid">
+                <div>
+                    <h3>MEMORIAS</h3>
+                    <p>Accede a la memoria del congreso anterior:</p>
+                    <a href="Memorias2025.html" class="btn-link">Ver Memorias 2025</a>
+                </div>
+                <div>
+                    <h3>SEDE</h3>
+                    <p>ESIME Zacatenco, Unidad Profesional Adolfo López Mateos, CDMX.</p>
+                </div>
             </div>
-            <a href="https://maps.app.goo.gl/ChIJc6oXHLH50YUR7tNwuZjF16g" target="_blank" class="btn-link">📍 Ver en Google Maps</a>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.339655848529!2d-99.1337424242637!3d19.505510681792484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b23c17aa73%3A0xa8d7c598b970d3ee!2sESIME%20-%20Escuela%20Superior%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20y%20El%C3%A9ctrica%20Unidad%20Zacatenco!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"></iframe>
+            </div>
         </section>
 
         <div class="logos-container">
