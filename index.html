@@ -6,75 +6,135 @@
     <title>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS 2026</title>
     <style>
         :root {
-            --bg: #f5f5f5;
-            --primary: #004d40;
-            --accent: #009688;
-            --text: #212121;
-            --muted: #555;
-            --card: rgba(255,255,255,0.95);
+            --bg: #f8f9fa;
+            --primary: #004d40; /* Verde IPN/ESIME */
+            --accent: #00796b;
+            --text: #2c3e50;
+            --muted: #616161;
+            --card-bg: #ffffff;
         }
+
         * { box-sizing: border-box; }
+
         body {
             margin: 0;
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             color: var(--text);
             background: var(--bg);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        .top-banner { padding: 20px; text-align: center; background: white; }
-        .top-banner img { max-width: 100%; width: 400px; height: auto; }
+
+        /* Banner Superior */
+        .top-banner { 
+            padding: 20px; 
+            text-align: center; 
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+        .top-banner img { max-width: 100%; width: 380px; height: auto; }
         
+        /* Hero Section */
         .hero {
-            position: relative;
-            background: linear-gradient(180deg, rgba(0,77,64,0.85), rgba(0,77,64,0.55)), url('fondo.png') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(0,77,64,0.95), rgba(0,105,92,0.8)), url('fondo.png') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .hero h1 { 
+            margin: 0 0 15px; 
+            font-size: clamp(1.6rem, 5vw, 2.6rem); 
+            line-height: 1.2;
+            text-wrap: balance;
+            font-weight: 800;
+        }
+        .hero h2 { 
+            margin: 0; 
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem); 
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
         
-        h1 { margin: 0 0 12px; font-size: clamp(1.4rem, 4vw, 2.2rem); text-wrap: balance; }
-        h2 { margin: 0 0 8px; font-size: clamp(1rem, 2.5vw, 1.3rem); font-weight: 400; }
-        h3 { color: var(--primary); margin: 25px 0 12px; font-size: 1.3rem; }
-        h4 { color: #00695c; margin: 16px 0 8px; }
-        
-        p, ul li { line-height: 1.6; font-size: 0.95rem; }
+        /* Tarjetas Estilizadas */
         section.card { 
-            background: var(--card); 
-            border-radius: 10px; 
-            padding: 24px; 
-            box-shadow: 0 6px 20px rgba(0,0,0,.08); 
-            margin-bottom: 20px;
-            word-wrap: break-word;
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            padding: 30px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.03);
         }
         
-        .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        ul { padding-left: 20px; }
+        h3 { 
+            color: var(--primary); 
+            margin: 0 0 20px 0; 
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h3::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        h4 { color: var(--accent); margin: 20px 0 10px; font-weight: 600; }
+        
+        p, ul li { line-height: 1.7; font-size: 1rem; color: #444; }
+        
+        .grid { 
+            display: grid; 
+            gap: 30px; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        }
+
+        ul { padding-left: 20px; list-style-type: square; }
+        ul li { margin-bottom: 8px; }
+
+        /* Directorio y Comité en formato original línea por línea */
         .comite-box { 
-            border: 2px solid var(--primary); 
             border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(0,77,64,0.05); 
-            margin: 16px 0; 
+            padding: 20px; 
+            background: #fdfdfd; 
+            margin: 20px 0; 
+            border-left: 4px solid var(--primary);
+            font-size: 0.95rem;
         }
+        .comite-box p { margin: 0; color: #333; }
 
-        /* Botón Flotante Móvil */
+        /* Botón Flotante */
         .fab-download {
-            position: fixed; bottom: 20px; right: 20px; background: var(--primary);
-            color: white; padding: 12px 20px; border-radius: 50px;
-            text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            display: flex; align-items: center; gap: 8px; font-weight: bold; z-index: 1000;
+            position: fixed; bottom: 25px; right: 25px; 
+            background: var(--primary);
+            color: white; padding: 14px 24px; border-radius: 50px;
+            text-decoration: none; box-shadow: 0 10px 25px rgba(0,77,64,0.3);
+            display: flex; align-items: center; gap: 10px; font-weight: 600; 
+            z-index: 1000; transition: transform 0.2s ease;
         }
+        .fab-download:hover { transform: translateY(-3px); }
 
-        /* Mapa Responsivo */
+        /* Mapa */
         .map-container {
             position: relative; padding-bottom: 56.25%; height: 0; 
-            overflow: hidden; border-radius: 8px; margin-top: 15px;
+            overflow: hidden; border-radius: 12px; margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .logos-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; padding: 20px 0; }
-        .logos-container img { max-width: 130px; height: auto; }
+        .btn-mail { color: var(--accent); text-decoration: none; font-weight: 600; border-bottom: 1px dashed; }
+
+        .logos-container { 
+            display: flex; flex-wrap: wrap; gap: 40px; 
+            justify-content: center; align-items: center; 
+            padding: 40px 0; opacity: 0.8;
+        }
+        .logos-container img { max-width: 120px; height: auto; }
 
         @media (min-width: 769px) { .fab-download { display: none; } }
     </style>
@@ -82,7 +142,7 @@
 <body>
 
     <div class="top-banner">
-        <img src="logo-ipn-lema-vertical-guinda-01.jpg" alt="Logo IPN" />
+        <img src="logo-ipn-lema-vertical-guinda-01.jpg" alt="IPN" />
     </div>
 
     <header class="hero">
@@ -91,69 +151,42 @@
     </header>
 
     <a href="CINIES2026plantillaV3.docx" class="fab-download" download>
-        <span>📄 Plantilla</span>
+        <span>📄 Plantilla .docx</span>
     </a>
 
     <main class="container">
         <section class="card">
             <h3>OBJETIVO</h3>
             <p>El propósito es reunir a especialistas y estudiantes nacionales e internacionales de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas para discutir temas actuales y propuestas sobre Educación.</p>
-            <h3>ACTIVIDADES</h3>
+            <h4>ACTIVIDADES PRINCIPALES</h4>
             <ul>
-                <li>Ponencias</li>
-                <li>Carteles</li>
+                <li>Ponencias Magistrales</li>
+                <li>Presentación de Carteles</li>
             </ul>
         </section>
 
         <section class="card">
-            <h3>TEMÁTICAS</h3>
-            <div class="grid">
-                <div>
-                    <h4>INGENIERÍA ELÉCTRICA</h4>
-                    <ul>
-                        <li>Alta Tensión y Aislamiento Eléctrico</li>
-                        <li>Análisis de Sistemas de Distribución</li>
-                        <li>Electrónica de Potencia</li>
-                        <li>Inteligencia Artificial Aplicada</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>MECÁNICA</h4>
-                    <ul>
-                        <li>Aerodinámica</li>
-                        <li>Plantas Térmicas</li>
-                        <li>Vibraciones y Rotodinámica</li>
-                        <li>Energías Alternas</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>SISTEMAS Y OTRAS</h4>
-                    <ul>
-                        <li>Fotónica e Instrumentación</li>
-                        <li>Sistemas Complejos</li>
-                        <li>Redes de Datos</li>
-                        <li>Eficiencia Energética</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="card">
-            <h3>INFORMACIÓN PARA AUTORES Y FECHAS IMPORTANTES</h3>
-            <p>Los trabajos deberán enviarse a los correos: <a href="mailto:cniescelectrica@ipn.mx">Eléctrica</a>, <a href="mailto:cniescmecanica@ipn.mx">Mecánica</a>, <a href="mailto:cniescsistemas@ipn.mx">Sistemas</a>, <a href="mailto:cniescenergia@ipn.mx">Energía</a>, <a href="mailto:cniescelectronica@ipn.mx">Electrónica</a>, <a href="mailto:cniesctelecom@ipn.mx">Telecomunicaciones</a>.</p>
-            <p>Plantilla: <a href="CINIES2026plantillaV3.docx" download>CINIES2026plantillaV3.docx</a></p>
+            <h3>CONVOCATORIA Y FECHAS</h3>
+            <p>Envío de trabajos a los correos: 
+                <a href="mailto:cniescelectrica@ipn.mx" class="btn-mail">Eléctrica</a>, 
+                <a href="mailto:cniescmecanica@ipn.mx" class="btn-mail">Mecánica</a>, 
+                <a href="mailto:cniescsistemas@ipn.mx" class="btn-mail">Sistemas</a>, 
+                <a href="mailto:cniescenergia@ipn.mx" class="btn-mail">Energía</a>, 
+                <a href="mailto:cniescelectronica@ipn.mx" class="btn-mail">Electrónica</a>, 
+                <a href="mailto:cniesctelecom@ipn.mx" class="btn-mail">Telecomunicaciones</a>.
+            </p>
             
-            <h4>Fechas importantes</h4>
+            <h4 style="margin-top:25px;">CALENDARIO 2026</h4>
             <ul>
-                <li>Límite para recepción de artículos: 29 de junio</li>
-                <li>Notificación de aceptación: 24 de agosto</li>
-                <li>Límite para recepción de versión final: 11 de septiembre</li>
+                <li><strong>Límite para recepción de artículos:</strong> 29 de junio</li>
+                <li><strong>Notificación de aceptación:</strong> 24 de agosto</li>
+                <li><strong>Límite para recepción de versión final:</strong> 11 de septiembre</li>
             </ul>
         </section>
 
         <section class="card">
+            <h3>DIRECTORIO</h3>
             <div class="comite-box">
-                <h3>DIRECTORIO</h3>
                 <p>
                     Dr. Arturo Reyes Sandoval - Director General del IPN<br>
                     M. en C. Ismael Jaidar Monter - Secretario General del IPN<br>
@@ -163,8 +196,8 @@
                 </p>
             </div>
 
+            <h3>COMITÉ ORGANIZADOR</h3>
             <div class="comite-box">
-                <h3>COMITÉ ORGANIZADOR</h3>
                 <p>
                     Dr. Eloy Ramírez García - Jefe de la Sección de Estudios de Posgrado e Investigación<br>
                     Dr. Adolfo Fontes - Coordinador General del XXIV Congreso<br>
@@ -175,9 +208,9 @@
                     Dr. Erick Eugenio Linares Vallejo - Coordinador de Electrónica<br>
                     M. en C. Alejandro Trejo León - Coordinador de Telecomunicaciones
                 </p>
-                <hr>
+                <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
                 <p>
-                    <strong>Comité Estudiantil IEEE:</strong><br>
+                    <strong>Comité Estudiantil IEEE (Apoyo Técnico):</strong><br>
                     Ing. Ricardo Martínez Martínez<br>
                     Ing. Ernesto Treviña Dimas<br>
                     Ing. Jenny Jazmín González González<br>
@@ -187,16 +220,14 @@
         </section>
 
         <section class="card">
-            <h3>SEDE Y UBICACIÓN</h3>
+            <h3>SEDE Y ACCESO</h3>
             <p>ESIME Zacatenco, Unidad Profesional Adolfo López Mateos, Ciudad de México.</p>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.339655848529!2d-99.1337424242637!3d19.505510681792484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b23c17aa73%3A0xa8d7c598b970d3ee!2sESIME%20-%20Escuela%20Superior%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20y%20El%C3%A9ctrica%20Unidad%20Zacatenco!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.781615469557!2d-99.13454362395646!3d19.508008038165034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9397617aa73%3A0x28d7c598b970d3ee!2sESIME%20-%20Escuela%20Superior%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20y%20El%C3%A9ctrica%20Unidad%20Zacatenco!5e0!3m2!1ses-419!2smx!4v1711200000000!5m2!1ses-419!2smx"></iframe>
             </div>
-        </section>
-
-        <section class="card">
-            <h3>MEMORIAS 2025</h3>
-            <p><a href="Memorias2025.html">Acceder a Memorias 2025</a></p>
+            <p style="margin-top:20px; text-align:center;">
+                <a href="Memorias2025.html" class="btn-mail">Consultar Memorias del Congreso 2025</a>
+            </p>
         </section>
 
         <div class="logos-container">
@@ -205,5 +236,9 @@
             <img src="ANI_90_IPN-color.png" alt="Logo IPN">
         </div>
     </main>
+
+    <footer style="text-align:center; padding:30px; font-size:0.85rem; color:var(--muted);">
+        XXIV CNIES 2026 • Instituto Politécnico Nacional
+    </footer>
 </body>
 </html>
