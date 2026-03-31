@@ -1,122 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS 2026</title>
-    <style>
-        :root {
-            --bg: #f8f9fa;
-            --primary: #004d40;
-            --accent: #00796b;
-            --text: #2c3e50;
-            --muted: #616161;
-            --card-bg: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS 2026</title>
 
-        * { box-sizing: border-box; }
+<style>
+:root {
+    --bg: #f8f9fa;
+    --primary: #004d40;
+    --accent: #00796b;
+    --text: #2c3e50;
+    --muted: #616161;
+    --card-bg: #ffffff;
+}
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            overflow-x: hidden;
-        }
+body { margin:0; font-family:'Segoe UI', sans-serif; background:var(--bg); color:var(--text); }
 
-        .top-banner { padding: 20px; text-align: center; background: white; border-bottom: 1px solid #eee; }
-        .top-banner img { max-width: 100%; width: 380px; }
+.top-banner { padding:20px; text-align:center; background:white; }
+.hero { background:#004d40; color:white; text-align:center; padding:50px; }
 
-        .hero {
-            background: linear-gradient(135deg, rgba(0,77,64,0.95), rgba(0,105,92,0.8)), url('fondo.png') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+.container { max-width:1000px; margin:auto; padding:20px; }
 
-        .hero h1 { margin: 0 0 15px; font-size: 2.4rem; font-weight: 800; }
-        .hero h2 { margin: 0; font-size: 1.2rem; font-weight: 300; }
+.card { background:white; padding:25px; margin-bottom:25px; border-radius:10px; }
 
-        .container { max-width: 1000px; margin: auto; padding: 30px 20px; }
+h3 { color:var(--primary); }
+h4 { color:var(--accent); }
 
-        section.card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
 
-        h3 { color: var(--primary); margin-bottom: 20px; }
-        h4 { color: var(--accent); margin-top: 20px; }
+ul { padding-left:20px; }
 
-        p, ul li { line-height: 1.6; }
+.map-container { position:relative; padding-bottom:56.25%; height:0; }
+.map-container iframe { position:absolute; width:100%; height:100%; }
 
-        .grid {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
+.comite-box { background:#fdfdfd; padding:15px; border-left:4px solid var(--primary); }
 
-        ul { padding-left: 20px; }
-
-        .fab-download {
-            position: fixed; bottom: 25px; right: 25px;
-            background: var(--primary); color: white;
-            padding: 14px 24px; border-radius: 50px;
-            text-decoration: none;
-        }
-
-        .map-container {
-            position: relative; padding-bottom: 56.25%; height: 0;
-        }
-        .map-container iframe {
-            position: absolute; width: 100%; height: 100%; border: 0;
-        }
-
-        .logos-container {
-            display: flex; gap: 40px;
-            justify-content: center;
-            padding: 40px 0;
-        }
-
-        .logos-container img { max-width: 120px; }
-
-        footer { text-align:center; padding:30px; font-size:0.85rem; color:var(--muted); }
-    </style>
+footer { text-align:center; padding:20px; font-size:0.85rem; }
+</style>
 </head>
 
 <body>
 
 <div class="top-banner">
-    <img src="logo-ipn-lema-vertical-guinda-01.jpg">
+<img src="logo-ipn-lema-vertical-guinda-01.jpg">
 </div>
 
 <header class="hero">
-    <h1>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS</h1>
-    <h2>10 al 13 de noviembre del 2026 • ESIME Zacatenco, Ciudad de México</h2>
+<h1>XXIV CONGRESO NACIONAL DE INGENIERÍA ELECTROMECÁNICA Y DE SISTEMAS</h1>
+<h2>10 al 13 de noviembre del 2026 • ESIME Zacatenco, Ciudad de México</h2>
 </header>
-
-<a href="CINIES2026plantillaV3.docx" class="fab-download" download>
-    📄 Plantilla .docx
-</a>
 
 <main class="container">
 
+<!-- OBJETIVO -->
 <section class="card">
-    <h3>OBJETIVO</h3>
-    <p>El propósito es reunir a especialistas y estudiantes nacionales e internacionales de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas para discutir temas actuales y propuestas sobre Educación.</p>
+<h3>OBJETIVO</h3>
+<p>El propósito es reunir a especialistas y estudiantes nacionales e internacionales de las ingenierías Mecánica, Eléctrica, Electrónica, Telecomunicaciones y de Sistemas.</p>
 
-    <h4>ACTIVIDADES PRINCIPALES</h4>
-    <ul>
-        <li>Ponencias Magistrales</li>
-        <li>Presentación de Carteles</li>
-    </ul>
+<h4>ACTIVIDADES PRINCIPALES</h4>
+<ul>
+<li>Ponencias Magistrales</li>
+<li>Presentación de Carteles</li>
+</ul>
 </section>
 
 <!-- TEMÁTICAS -->
 <section class="card">
 <h3>TEMÁTICAS DEL CONGRESO</h3>
+
 <div class="grid">
 <div>
 <h4>INGENIERÍA ELÉCTRICA</h4>
@@ -125,67 +77,34 @@
 <li>Análisis de Sistemas de Distribución</li>
 <li>Análisis y Control de Máquinas Eléctricas</li>
 <li>Electrónica de Potencia</li>
-<li>Estabilidad, Control y Operación de Sistemas Eléctricos de Potencia</li>
-<li>Inteligencia Artificial Aplicada a la Ingeniería Eléctrica</li>
-<li>Protección Digital de Sistemas de Potencia</li>
-<li>Redes Flexibles de Transmisión Eléctrica</li>
+<li>Estabilidad de Sistemas de Potencia</li>
+<li>Inteligencia Artificial aplicada</li>
+<li>Protección Digital</li>
 <li>Redes Inteligentes</li>
-<li>Sistemas Digitales</li>
-<li>Compatibilidad Electromagnética</li>
-<li>Transitorios Electromagnéticos</li>
-<li>Mercados Eléctricos</li>
 </ul>
 
 <h4>MECÁNICA</h4>
 <ul>
 <li>Aerodinámica</li>
-<li>Biomecánica y Biomodelado</li>
-<li>Estructuras</li>
-<li>Plantas Térmicas, Turbinas de Vapor y Gas</li>
-<li>Procesos de Fabricación y Sistemas de Manufactura</li>
-<li>Refrigeración y Aire Acondicionado</li>
-<li>Análisis y Simulación Numérica</li>
-<li>Transferencia de Calor y Masa</li>
-<li>Tribología</li>
-<li>Turbulencia</li>
-<li>Vibraciones y Rotodinámica</li>
-<li>Energías Alternas</li>
-<li>Uso y Manejo Eficiente de la Energía</li>
-<li>Seguridad Pasiva</li>
+<li>Biomecánica</li>
+<li>Transferencia de Calor</li>
+<li>Vibraciones</li>
 </ul>
 </div>
 
 <div>
-<h4>INGENIERÍA ELECTRÓNICA</h4>
+<h4>ELECTRÓNICA</h4>
 <ul>
 <li>Fotónica</li>
-<li>Instrumentación Electrónica</li>
-<li>Evaluación No Destructiva</li>
+<li>Instrumentación</li>
 <li>Señales y Sistemas</li>
-</ul>
-
-<h4>TELECOMUNICACIONES</h4>
-<ul>
-<li>Sistemas de Comunicaciones</li>
-<li>Redes de Datos</li>
-<li>Procesamiento de Señales</li>
-<li>Dispositivos Avanzados para Telecomunicaciones</li>
-</ul>
-
-<h4>INGENIERÍA DE SISTEMAS</h4>
-<ul>
-<li>Sistemas de Ingeniería</li>
-<li>Sistemas Complejos</li>
-<li>Sistemas de Información y Comunicación</li>
 </ul>
 
 <h4>ENERGÍA</h4>
 <ul>
 <li>Energías Alternas</li>
-<li>Energías Convencionales</li>
-<li>Pilas de Combustible e Hidrógeno</li>
+<li>Hidrógeno</li>
 <li>Biocombustibles</li>
-<li>Eficiencia y Sostenibilidad Energética</li>
 </ul>
 </div>
 </div>
@@ -194,40 +113,69 @@
 <!-- AUTORES -->
 <section class="card">
 <h3>INFORMACIÓN PARA AUTORES</h3>
-<p>Los artículos finales deberán presentarse en formato PDF y Word y no exceder 4 páginas.</p>
-<p>La decisión de la aceptación de cada artículo es a juicio del Comité Técnico del Congreso.</p>
-<p>Si el artículo es aceptado se deberá presentar en las fechas de acuerdo al programa establecido por el Comité Organizador del Congreso.</p>
+<p>Artículos en PDF y Word, máximo 4 páginas.</p>
 </section>
 
 <!-- CONVOCATORIA -->
 <section class="card">
 <h3>CONVOCATORIA Y FECHAS</h3>
+<p>Envío de trabajos a los correos:</p>
+
 <ul>
-<li><strong>Límite para recepción de artículos:</strong> 29 de junio</li>
-<li><strong>Notificación de aceptación:</strong> 24 de agosto</li>
-<li><strong>Límite para versión final:</strong> 11 de septiembre</li>
+<li>Eléctrica: cniescelectrica@ipn.mx</li>
+<li>Mecánica: cniescmecanica@ipn.mx</li>
+<li>Sistemas: cniescsistemas@ipn.mx</li>
+<li>Energía: cniescenergia@ipn.mx</li>
+<li>Electrónica: cniescelectronica@ipn.mx</li>
+<li>Telecom: cniesctelecom@ipn.mx</li>
 </ul>
+
+<ul>
+<li>Recepción: 29 junio</li>
+<li>Aceptación: 24 agosto</li>
+<li>Versión final: 11 septiembre</li>
+</ul>
+</section>
+
+<!-- DIRECTORIO -->
+<section class="card">
+<h3>DIRECTORIO</h3>
+<div class="comite-box">
+<p>
+Dr. Arturo Reyes Sandoval<br>
+M. en C. Ismael Jaidar Monter<br>
+Dra. María Isabel Rojas Ruíz<br>
+Dra. Martha Leticia Vázquez González<br>
+Dr. Mauro Alberto Enciso Aguilar
+</p>
+</div>
+
+<h3>COMITÉ ORGANIZADOR</h3>
+<div class="comite-box">
+<p>
+Dr. Eloy Ramírez García<br>
+Dr. Adolfo Fontes<br>
+Dr. Fermín Espino<br>
+Dr. German Rodríguez<br>
+Dr. Miguel Martínez<br>
+</p>
+</div>
 </section>
 
 <!-- SEDE -->
 <section class="card">
 <h3>SEDE Y ACCESO</h3>
 <p>ESIME Zacatenco, Ciudad de México.</p>
+
 <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?..."></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.781615469557!2d-99.13454362395646!3d19.508008038165034"></iframe>
 </div>
 </section>
-
-<div class="logos-container">
-<img src="logoIEEEESIMEZacatenco.png">
-<img src="ANI_67_ESIME-ZACATENCO-color.jpg">
-<img src="ANI_90_IPN-color.png">
-</div>
 
 </main>
 
 <!-- CMT -->
-<section style="padding:20px; font-size:14px; text-align:center;">
+<section style="padding:20px; text-align:center;">
 <p>
 The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
 </p>
