@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Artículos - Telecomunicaciones CNIES 2025</title>
+    <style>
+        :root {
+            --primary: #800000; /* Guinda IPN */
+            --accent: #27AE60;  /* Verde ESIME */
+            --bg: #F8F9FA;
+            --text-main: #212529;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-logos { display: flex; align-items: center; gap: 15px; }
+        .nav-logos img { height: 45px; }
+        .btn-back { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .btn-back:hover { color: var(--accent); }
+
+        .section-header {
+            background: linear-gradient(rgba(128,0,0,0.85), rgba(128,0,0,0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; color: white; padding: 4rem 1rem; text-align: center;
+        }
+
+        .search-container { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
+        #searchInput {
+            width: 100%; padding: 15px 25px; border-radius: 30px; border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
+        }
+
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
+        .article-card {
+            background: white; margin-bottom: 12px; padding: 20px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr auto;
+            align-items: center; gap: 20px; transition: 0.3s; border-left: 5px solid #ddd;
+        }
+        .article-card:hover { transform: translateX(5px); border-left-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .info h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 5px; text-transform: uppercase; }
+        .info .authors { font-style: italic; color: #444; font-size: 0.9rem; margin-bottom: 4px; }
+        .info .file-id { font-family: monospace; color: #888; font-size: 0.8rem; }
+
+        .btn-pdf {
+            background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px;
+            text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-pdf:hover { background: #600000; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            .article-card { grid-template-columns: 1fr; }
+            .btn-pdf { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logos">
+            <img src="../logo-ipn-horizontal.svg" alt="IPN">
+            <img src="../esime-1.jpg" alt="ESIME">
+        </div>
+        <a href="../index.html" class="btn-back">← Volver al Menú Principal</a>
+    </nav>
+
+    <header class="section-header">
+        <h1>Ingeniería en Telecomunicaciones</h1>
+        <p>Memorias del Congreso Nacional de Ingeniería y Estudios Superiores 2025</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Filtrar por título, autor o ID (ej: TEL 010)..." onkeyup="filterArticles()">
+    </div>
+
+    <div class="container" id="articleList">
+        
+        <div class="article-card">
+            <div class="info">
+                <h3>Propagación de ondas acústicas en el océano estratificado con una capa superior de hielo</h3>
+                <p class="authors">Alan I. Vazquez Yañez, Vladimir Rabinovitch, Raúl Castillo Pérez</p>
+                <p class="file-id">Archivo: TEL 001.pdf</p>
+            </div>
+            <a href="TEL 001.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Security and integrity in 8-bit processing architectures in IoT/LPWAN networks</h3>
+                <p class="authors">F. Ramírez-López, G. A. Yáñez-Casas, C. A. López-Balcázar, J. J. Hernández-Gómez...</p>
+                <p class="file-id">Archivo: TEL 002.pdf</p>
+            </div>
+            <a href="TEL 002.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Diseño de una nanoantena para aplicaciones en THz</h3>
+                <p class="authors">Bracho Arias Ricardo, Alvarez Chavez José Alfredo, Rodríguez Méndez Luis Manuel</p>
+                <p class="file-id">Archivo: TEL 003.pdf</p>
+            </div>
+            <a href="TEL 003.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Comparative Analysis of Operational Satellites Using APRS: Link Parameters, Electronics, and Applications</h3>
+                <p class="authors">R. L. Flores-Sánchez, F. Ramírez-López, G. A. Yáñez-Casas...</p>
+                <p class="file-id">Archivo: TEL 004.pdf</p>
+            </div>
+            <a href="TEL 004.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Diseño e implementación en arquitecturas reconfigurables de etapa de codificación de canal para comunicaciones satelitales</h3>
+                <p class="authors">Mario Axel Alva Díaz, Raúl Castillo Pérez, Gabriela Aurora Yáñez Casas...</p>
+                <p class="file-id">Archivo: TEL 005.pdf</p>
+            </div>
+            <a href="TEL 005.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Multiconectividad en la ESIME Zacatenco empleando 5G y el estándar 802.11</h3>
+                <p class="authors">A. R. Barocio Azpeitia, H. Oviedo Galdeano, J. A. López Toledo</p>
+                <p class="file-id">Archivo: TEL 006.pdf</p>
+            </div>
+            <a href="TEL 006.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Cálculo de permitividad dieléctrica en material para impresión 3D usando el método NRW</h3>
+                <p class="authors">Alejandro Trejo León, David Morales Rodríguez, Fabiola Martínez Zúñiga...</p>
+                <p class="file-id">Archivo: TEL 007.pdf</p>
+            </div>
+            <a href="TEL 007.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Diseño, construcción y caracterización de un arreglo de 4 guías de onda ranurada</h3>
+                <p class="authors">David Morales Rodriguez, Fabiola Martínez Zúñiga, Jorge Roberto Sosa Pedroza</p>
+                <p class="file-id">Archivo: TEL 008.pdf</p>
+            </div>
+            <a href="TEL 008.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Cifrado de la información mediante un algoritmo híbrido basado en matrices de rotación cuaterniónica</h3>
+                <p class="authors">M. A. Salazar-Ramirez, H. Oviedo-Galdeano, J. A. López-Toledo</p>
+                <p class="file-id">Archivo: TEL 009.pdf</p>
+            </div>
+            <a href="TEL 009.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Optimización de la estimación de voltaje para simulaciones transitorias en detectores de potencia de radiofrecuencia</h3>
+                <p class="authors">Leslie Paulina Cruz Rodríguez, Eloy Ramírez García, Aníbal Pacheco Sánchez</p>
+                <p class="file-id">Archivo: TEL 010.pdf</p>
+            </div>
+            <a href="TEL 010.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Plataforma IoT para Monitoreo de Calidad del Aire</h3>
+                <p class="authors">Daysi Hernández Labastida, Miguel Sánchez Meraz, Federico Felipe Durán</p>
+                <p class="file-id">Archivo: TEL011.pdf</p>
+            </div>
+            <a href="TEL011.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis Comparativo de Diferentes Técnicas de Medición de Calidad de Servicio en una Red Móvil</h3>
+                <p class="authors">Ismael Rojas Santacruz, Miguel Sánchez Meraz</p>
+                <p class="file-id">Archivo: TEL012.pdf</p>
+            </div>
+            <a href="TEL012.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Diseño y Construcción de un Amplificador de Media Potencia para Banda S</h3>
+                <p class="authors">Luis Eduardo Ayestaran Alvarez, Luis Manuel Rodríguez Méndez</p>
+                <p class="file-id">Archivo: TEL013.pdf</p>
+            </div>
+            <a href="TEL013.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelado para conector SMA en altas frecuencias</h3>
+                <p class="authors">Jessica Marin Vázquez, Luis Manuel Rodriguez Méndez</p>
+                <p class="file-id">Archivo: TEL014.pdf</p>
+            </div>
+            <a href="TEL014.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Identificación y corrección de errores de controlador de rotores para el seguimiento de satélites</h3>
+                <p class="authors">Luis Ángel Córdova Hernández, Martha Galaz-Larios, Luis Manuel Rodríguez</p>
+                <p class="file-id">Archivo: TEL015.pdf</p>
+            </div>
+            <a href="TEL015.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Impacto de Materiales Dieléctricos en la Respuesta en Frecuencia de Superficies Selectivas: Modelado Computacional</h3>
+                <p class="authors">A. D. Morales Vite, G. Hilario-Perez, P. Córdova Morales...</p>
+                <p class="file-id">Archivo: TEL016.pdf</p>
+            </div>
+            <a href="TEL016.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Impact of the Geometric Scaling on the Design of Sub-THz Frequency-Selective Surface</h3>
+                <p class="authors">G. Hilario-Perez, P. Córdova-Morales, A. D. Morales-Vite...</p>
+                <p class="file-id">Archivo: TEL017.pdf</p>
+            </div>
+            <a href="TEL017.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Micro y nano fabricación de un foto-interruptor para comunicaciones ópticas</h3>
+                <p class="authors">Pablo Córdova-Morales, Gustavo Hilario-Pérez, A. David Morales-Vite...</p>
+                <p class="file-id">Archivo: TEL018.pdf</p>
+            </div>
+            <a href="TEL018.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CNIES | Telecomunicaciones | ESIME Zacatenco | IPN</p>
+    </footer>
+
+    <script>
+        function filterArticles() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('article-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let content = cards[i].innerText.toLowerCase();
+                cards[i].style.display = content.includes(input) ? "grid" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
