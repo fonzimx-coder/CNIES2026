@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Artículos - Sistemas CNIES 2025</title>
+    <style>
+        :root {
+            --primary: #800000; /* Guinda IPN */
+            --accent: #27AE60;  /* Verde ESIME */
+            --bg: #F8F9FA;
+            --text-main: #212529;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        /* Navegación */
+        nav {
+            background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-logos { display: flex; align-items: center; gap: 15px; }
+        .nav-logos img { height: 45px; }
+        .btn-back { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .btn-back:hover { color: var(--accent); }
+
+        /* Encabezado */
+        .section-header {
+            background: linear-gradient(rgba(128,0,0,0.85), rgba(128,0,0,0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; color: white; padding: 4rem 1rem; text-align: center;
+        }
+
+        /* Buscador */
+        .search-container { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
+        #searchInput {
+            width: 100%; padding: 15px 25px; border-radius: 30px; border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
+        }
+
+        /* Lista de Artículos */
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
+        .article-card {
+            background: white; margin-bottom: 12px; padding: 20px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr auto;
+            align-items: center; gap: 20px; transition: 0.3s; border-left: 5px solid #ddd;
+        }
+        .article-card:hover { transform: translateX(5px); border-left-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .info h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 5px; text-transform: uppercase; }
+        .info .authors { font-style: italic; color: #444; font-size: 0.9rem; margin-bottom: 4px; }
+        .info .file-id { font-family: monospace; color: #888; font-size: 0.8rem; }
+
+        .btn-pdf {
+            background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px;
+            text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-pdf:hover { background: #600000; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            .article-card { grid-template-columns: 1fr; }
+            .btn-pdf { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logos">
+            <img src="../logo-ipn-horizontal.svg" alt="IPN">
+            <img src="../esime-1.jpg" alt="ESIME">
+        </div>
+        <a href="../index.html" class="btn-back">← Volver al Menú Principal</a>
+    </nav>
+
+    <header class="section-header">
+        <h1>Ingeniería de Sistemas</h1>
+        <p>Memorias del Congreso Nacional de Ingeniería y Estudios Superiores 2025</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Filtrar por título, autor o ID (ej: SIS 040)..." onkeyup="filterArticles()">
+    </div>
+
+    <div class="container" id="articleList">
+        <div class="article-card">
+            <div class="info">
+                <h3>Inteligencia Artificial en la inspección de defectos de aerogeneradores</h3>
+                <p class="authors">R. Carreño Aguilera, I. Mendoza Vásquez, M. Patiño Ortiz...</p>
+                <p class="file-id">Archivo: SIS 001.pdf</p>
+            </div>
+            <a href="SIS 001.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Aplicación del modelo ServPerf y un modelo de ecuaciones estructurales (PLS-SEM)</h3>
+                <p class="authors">M. Mijangos Dominguez, R. Carreño Aguilera, M. Patiño Ortiz...</p>
+                <p class="file-id">Archivo: SIS 002.pdf</p>
+            </div>
+            <a href="SIS 002.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Clasificador de cáncer de piel melanoma mediante RNA y procesamiento de imágenes</h3>
+                <p class="authors">R. Carreño Aguilera, S. Juárez Vázquez, M. A. Robles Maciel...</p>
+                <p class="file-id">Archivo: SIS 003.pdf</p>
+            </div>
+            <a href="SIS 003.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Uso de la Inteligencia Artificial en el Análisis de Datos Sísmicos en la República Mexicana</h3>
+                <p class="authors">F. Hernández Hernández, M. Patiño Ortiz, J. Patiño Ortiz</p>
+                <p class="file-id">Archivo: SIS 005.pdf</p>
+            </div>
+            <a href="SIS 005.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Identificación de requisitos críticos en un Sistema HACCP de cárnicos con la técnica T-Fine</h3>
+                <p class="authors">A. Rafael Vázquez, L. L. Mira Segura, A. Trejo Martínez, M. Á. Martínez Cruz</p>
+                <p class="file-id">Archivo: SIS 006.pdf</p>
+            </div>
+            <a href="SIS 006.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Hacia una Gestión Sistémica del Agua en Comunidades Rurales Turísticas de la CDMX</h3>
+                <p class="authors">Z. Pérez-Matamoros, R. Tejeda-Padilla, I. Badillo-Piña, L. M. Hernández-Simón</p>
+                <p class="file-id">Archivo: SIS 009.pdf</p>
+            </div>
+            <a href="SIS 009.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelo sistemático para la elaboración del Estado del Arte de la investigación científica</h3>
+                <p class="authors">J. Rivera-Robles, J. Bory-Reyes, L. M. Hernández-Simón, J. I. E. Palacios-Hernández</p>
+                <p class="file-id">Archivo: SIS 010.pdf</p>
+            </div>
+            <a href="SIS 010.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Economía Familiar: Clave para el bienestar y la sostenibilidad</h3>
+                <p class="authors">I. Mendoza-Soria, C. Hernández-Aguilar</p>
+                <p class="file-id">Archivo: SIS 011.pdf</p>
+            </div>
+            <a href="SIS 011.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Redes Neuronales para la Predicción de Sequías en el Norte de la CDMX</h3>
+                <p class="authors">Y. Garza-Pimentel, M. A. González-Olvera, J. R. Santos-Reyes</p>
+                <p class="file-id">Archivo: SIS 012.pdf</p>
+            </div>
+            <a href="SIS 012.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis sistémico del impacto de incidentes en neumáticos de vehículos de uso particular</h3>
+                <p class="authors">V. Venegas Aguirre, L. M. Hernández Simón, H. Quintana Espinosa</p>
+                <p class="file-id">Archivo: SIS 013.pdf</p>
+            </div>
+            <a href="SIS 013.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Revisión sistemática de dimensión de información en redes complejas</h3>
+                <p class="authors">J. L. Valdés Atencio, J. S. De la Cruz García, J. Bory Reyes, A. Ramírez Arellano</p>
+                <p class="file-id">Archivo: SIS 017.pdf</p>
+            </div>
+            <a href="SIS 017.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Sistema automatizado de control y monitoreo para la desinfección de semillas por luz UV-C</h3>
+                <p class="authors">M. Rojas, J. I. Méndez, D. C. Balderas, C. Hernández-Aguilar...</p>
+                <p class="file-id">Archivo: SIS 019.pdf</p>
+            </div>
+            <a href="SIS 019.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Hibernación como Recurso de Supervivencia en los Sistemas Viables: Aplicación al Sistema Educativo</h3>
+                <p class="authors">F. E. Morán Ramírez, I. Badillo Piña, R. Tejeda Padilla, J. O. Ávila Arroyo...</p>
+                <p class="file-id">Archivo: SIS 022.pdf</p>
+            </div>
+            <a href="SIS 022.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Sistema de Información para el control de recursos utilizados en pandemia</h3>
+                <p class="authors">M. Patiño-Ortiz, L. Y. Villagrán-Villegas, F. R. Esquivel-Patiño, R. Carreño Aguilera</p>
+                <p class="file-id">Archivo: SIS 024.pdf</p>
+            </div>
+            <a href="SIS 024.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Seguridad digital en niños escolarizados: Su situación actual</h3>
+                <p class="authors">J. D. Botello-Jaime, J. Bory-Reyes</p>
+                <p class="file-id">Archivo: SIS 025.pdf</p>
+            </div>
+            <a href="SIS 025.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Hacia un Modelo de Sistema Viable para la Gestión de Estaciones de Carga de Vehículos Eléctricos</h3>
+                <p class="authors">O. Solano Cruz, C. Hernández Aguilar, F. A. Domínguez Pacheco...</p>
+                <p class="file-id">Archivo: SIS 028.pdf</p>
+            </div>
+            <a href="SIS 028.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Integración Agrícola y Pecuaria Como Herramienta Para la Mejora de la Circularidad</h3>
+                <p class="authors">E. M. Berdeja-Rocha, R. Tejeda-Padilla, I. Badillo-Piña...</p>
+                <p class="file-id">Archivo: SIS 030.pdf</p>
+            </div>
+            <a href="SIS 030.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Micobiota en papel moneda y monedas usadas en el transporte público en Estado de México</h3>
+                <p class="authors">Y. A. Camargo-Pinto, F. A. Domínguez-Pacheco, C. Hernández-Aguilar...</p>
+                <p class="file-id">Archivo: SIS 031.pdf</p>
+            </div>
+            <a href="SIS 031.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis sensorial y aceptación de tortitas de lenteja para hamburguesas</h3>
+                <p class="authors">Torres Tenorio Yoliztli Cecilia, Hernández Aguilar Claudia</p>
+                <p class="file-id">Archivo: SIS 033.pdf</p>
+            </div>
+            <a href="SIS 033.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Detección de insecticidas y fungicidas en semillas de maíz hibrido a través de espectroscopia</h3>
+                <p class="authors">Sindy Janneth Olvera Vázquez, Alfredo Cruz Orea, Sergio Armando Tomás Velázquez</p>
+                <p class="file-id">Archivo: SIS 034.pdf</p>
+            </div>
+            <a href="SIS 034.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>El efecto de la luz UV-C en maíz amarillo</h3>
+                <p class="authors">Pacheco Flavio Arturo, Pérez-Reyes María Cristina Julia</p>
+                <p class="file-id">Archivo: SIS 035.pdf</p>
+            </div>
+            <a href="SIS 035.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Neuroeducación: conociendo el funcionamiento cerebral para usarlo en el aula</h3>
+                <p class="authors">Humberto Dorantes Benavidez</p>
+                <p class="file-id">Archivo: SIS 039.pdf</p>
+            </div>
+            <a href="SIS 039.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Educación Comunitaria y Turismo en Xochimilco: Un Enfoque desde el Modelo de Sistemas</h3>
+                <p class="authors">A. Sánchez Vázquez, M. Patiño Ortiz, J. L. Alcaide Juárez</p>
+                <p class="file-id">Archivo: SIS 043.pdf</p>
+            </div>
+            <a href="SIS 043.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Optimización del Flujo de Información a través de la Planificación de un Almacén</h3>
+                <p class="authors">Juan Erick Amador Santiago, Zellzin Pérez Matamoros...</p>
+                <p class="file-id">Archivo: SIS 044.pdf</p>
+            </div>
+            <a href="SIS 044.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelo sistémico de oferta y demanda en las MiPyME de artículos de limpieza de Cuernavaca</h3>
+                <p class="authors">Miguel Angel Pérez Solís, Andriy Kryvko</p>
+                <p class="file-id">Archivo: SIS 045.pdf</p>
+            </div>
+            <a href="SIS 045.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Zona Metropolitana del Valle de México, análisis de riesgos por lluvias extremas</h3>
+                <p class="authors">Mireya Berenice Monroy-Anieva, Rosalba Zepeda-Bautista...</p>
+                <p class="file-id">Archivo: SIS 046.pdf</p>
+            </div>
+            <a href="SIS 046.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Control de un dispositivo de asistencia mediante movimientos oculares</h3>
+                <p class="authors">Carlos Javier Sosa Paz, Rubén Martínez López</p>
+                <p class="file-id">Archivo: SIS 048.pdf</p>
+            </div>
+            <a href="SIS 048.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Efecto de orégano mexicano en las propiedades térmicas de aceites vegetales comestibles</h3>
+                <p class="authors">Sánchez-Sánchez Marcial Margarito, Cortes Aguirre Hector</p>
+                <p class="file-id">Archivo: SIS 050.pdf</p>
+            </div>
+            <a href="SIS 050.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>UV-C y Bioactivos para Mejorar la Calidad de Semillas</h3>
+                <p class="authors">Eder Contreras-Gallegos, Vinicius Cruz San Martín...</p>
+                <p class="file-id">Archivo: SIS 051.pdf</p>
+            </div>
+            <a href="SIS 051.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Hacia la transformación digital en educación superior: Gestor de datos académicos</h3>
+                <p class="authors">Joel Eduardo Valencia Hernandez, Claudia Hernandez Aguilar</p>
+                <p class="file-id">Archivo: SIS 052.pdf</p>
+            </div>
+            <a href="SIS 052.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Sistema de información biométrico para la gestión del control de asistencia del personal</h3>
+                <p class="authors">J. E. Montoya Montes, H. Dorantes Benavidez, M. A. Martínez Cruz</p>
+                <p class="file-id">Archivo: SIS 054.pdf</p>
+            </div>
+            <a href="SIS 054.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelo estadístico 2k sobre la ocurrencia de accidentes: caso práctico</h3>
+                <p class="authors">Gaytan Muñoz, H. Dorantes Benavidez, L. L. Mira Segura</p>
+                <p class="file-id">Archivo: SIS 057.pdf</p>
+            </div>
+            <a href="SIS 057.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Metodología Sistémica para el Diseño Estratégico en Áreas Naturales Protegidas</h3>
+                <p class="authors">Acevedo Sánchez Brenda, Hernández Hernández Claudia</p>
+                <p class="file-id">Archivo: SIS 081.pdf</p>
+            </div>
+            <a href="SIS 081.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis de Rentabilidad de un Sistema Solar Fotovoltaico Conectado a la Red de CFE</h3>
+                <p class="authors">B. Katherine Franco, Claudia Hernández Aguilar</p>
+                <p class="file-id">Archivo: SIS 083.pdf</p>
+            </div>
+            <a href="SIS 083.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Optimización de la Integridad de Ductos mediante el Uso de PIG’s en la Industria</h3>
+                <p class="authors">B. Cortés-Martínez, A. Acosta-Banda, L. Echavarría Difur...</p>
+                <p class="file-id">Archivo: SIS 064.pdf</p>
+            </div>
+            <a href="SIS 064.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Métodos Sistémicos para Elevar la Calidad en la Industria Automotriz</h3>
+                <p class="authors">E. A. Valladares López, A. Acosta Banda, M. Patiño Ortiz</p>
+                <p class="file-id">Archivo: SIS 065.pdf</p>
+            </div>
+            <a href="SIS 065.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelos de corrupción en la industria: revisión sistemática de literatura</h3>
+                <p class="authors">Felipe de Jesús Dorantes Benavidez, Sandra González Vargas</p>
+                <p class="file-id">Archivo: SIS 071.pdf</p>
+            </div>
+            <a href="SIS 071.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Desarrollo de un Sistema de Información para la Calidad del Servicio de los Operadores</h3>
+                <p class="authors">Gabriel Ramírez-Cortés, Efraín José Martínez-Ortiz...</p>
+                <p class="file-id">Archivo: SIS 073.pdf</p>
+            </div>
+            <a href="SIS 073.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Índice de rendimiento estudiantil en evaluaciones en línea</h3>
+                <p class="authors">María del Carmen Soto Camacho, Elena Fabiola Ruiz Ledesma</p>
+                <p class="file-id">Archivo: SIS 074.pdf</p>
+            </div>
+            <a href="SIS 074.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        </div>
+
+    <footer>
+        <p>&copy; 2025 CNIES | Ingeniería de Sistemas | ESIME Zacatenco | IPN</p>
+    </footer>
+
+    <script>
+        function filterArticles() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('article-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let content = cards[i].innerText.toLowerCase();
+                cards[i].style.display = content.includes(input) ? "grid" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
