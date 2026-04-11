@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Artículos - Ingeniería en Electrónica CNIES 2025</title>
+    <style>
+        :root {
+            --primary: #800000; /* Guinda IPN */
+            --accent: #2980B9;  /* Azul Electrónica */
+            --bg: #F8F9FA;
+            --text-main: #212529;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-logos { display: flex; align-items: center; gap: 15px; }
+        .nav-logos img { height: 45px; }
+        .btn-back { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .btn-back:hover { color: var(--accent); }
+
+        .section-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; color: white; padding: 4rem 1rem; text-align: center;
+        }
+
+        .search-container { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
+        #searchInput {
+            width: 100%; padding: 15px 25px; border-radius: 30px; border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
+        }
+
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
+        
+        /* Aviso de información pendiente */
+        .placeholder-alert {
+            background: #FFF3CD; border: 1px solid #FFE69C; color: #856404;
+            padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;
+        }
+
+        .article-card {
+            background: white; margin-bottom: 12px; padding: 20px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr auto;
+            align-items: center; gap: 20px; transition: 0.3s; border-left: 5px solid #ddd;
+        }
+        .article-card:hover { transform: translateX(5px); border-left-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .info h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 5px; text-transform: uppercase; }
+        .info .authors { font-style: italic; color: #444; font-size: 0.9rem; margin-bottom: 4px; }
+        .info .file-id { font-family: monospace; color: #888; font-size: 0.8rem; }
+
+        .btn-pdf {
+            background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px;
+            text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-pdf:hover { background: var(--accent); }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            .article-card { grid-template-columns: 1fr; }
+            .btn-pdf { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logos">
+            <img src="../logo-ipn-horizontal.svg" alt="IPN">
+            <img src="../esime-1.jpg" alt="ESIME">
+        </div>
+        <a href="../index.html" class="btn-back">← Volver al Menú Principal</a>
+    </nav>
+
+    <header class="section-header">
+        <h1>Ingeniería en Electrónica</h1>
+        <p>Memorias del Congreso Nacional de Ingeniería y Estudios Superiores 2025</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar artículo o autor..." onkeyup="filterArticles()">
+    </div>
+
+    <div class="container">
+        <div class="placeholder-alert">
+            <strong>Nota:</strong> Los artículos mostrados abajo son ejemplos. Favor de actualizar con la lista oficial de Electrónica.
+        </div>
+
+        <div id="articleList">
+            <div class="article-card">
+                <div class="info">
+                    <h3>Título del Artículo de Electrónica (Ejemplo)</h3>
+                    <p class="authors">Nombre del Autor 1, Nombre del Autor 2</p>
+                    <p class="file-id">Archivo: ELC 001.pdf</p>
+                </div>
+                <a href="ELC 001.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+            </div>
+
+            <div class="article-card">
+                <div class="info">
+                    <h3>Diseño de Circuitos Integrados de Bajo Consumo</h3>
+                    <p class="authors">Pendiente de Actualizar</p>
+                    <p class="file-id">Archivo: ELC 002.pdf</p>
+                </div>
+                <a href="ELC 002.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CNIES | Ingeniería en Electrónica | ESIME Zacatenco | IPN</p>
+    </footer>
+
+    <script>
+        function filterArticles() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('article-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let content = cards[i].innerText.toLowerCase();
+                cards[i].style.display = content.includes(input) ? "grid" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
