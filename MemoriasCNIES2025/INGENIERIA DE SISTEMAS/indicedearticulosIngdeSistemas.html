@@ -15,7 +15,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
 
-        /* Navegación */
         nav {
             background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
             align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
@@ -25,20 +24,17 @@
         .btn-back { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
         .btn-back:hover { color: var(--accent); }
 
-        /* Encabezado */
         .section-header {
             background: linear-gradient(rgba(128,0,0,0.85), rgba(128,0,0,0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80');
             background-size: cover; background-position: center; color: white; padding: 4rem 1rem; text-align: center;
         }
 
-        /* Buscador */
         .search-container { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
         #searchInput {
             width: 100%; padding: 15px 25px; border-radius: 30px; border: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
         }
 
-        /* Lista de Artículos */
         .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
         .article-card {
             background: white; margin-bottom: 12px; padding: 20px; border-radius: 8px;
@@ -132,6 +128,24 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Educación para la Preservación del Ambiente Natural, Usando Multimedia</h3>
+                <p class="authors">J. A. Reyes Bonilla</p>
+                <p class="file-id">Archivo: SIS 007.pdf</p>
+            </div>
+            <a href="SIS 007.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La polución plástica y el peligro invisible</h3>
+                <p class="authors">J. A. Reyes Bonilla</p>
+                <p class="file-id">Archivo: SIS 008.pdf</p>
+            </div>
+            <a href="SIS 008.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>Hacia una Gestión Sistémica del Agua en Comunidades Rurales Turísticas de la CDMX</h3>
                 <p class="authors">Z. Pérez-Matamoros, R. Tejeda-Padilla, I. Badillo-Piña, L. M. Hernández-Simón</p>
                 <p class="file-id">Archivo: SIS 009.pdf</p>
@@ -177,11 +191,47 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Modelo sistémico para la reducción del impacto económico y ambiental por sargazo</h3>
+                <p class="authors">J. Matías Velasco, L. M. Hernández Simón, H. Quintana Espinosa</p>
+                <p class="file-id">Archivo: SIS 014.pdf</p>
+            </div>
+            <a href="SIS 014.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Optimización de los recursos hídricos mediante sistemas inteligentes</h3>
+                <p class="authors">V. M. Maldonado Benítez, J. J. Moreno Escobar, O. Morales Matamoros</p>
+                <p class="file-id">Archivo: SIS 015.pdf</p>
+            </div>
+            <a href="SIS 015.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Accesibilidad geográfica para las unidades de servicio de salud en Chihuahua</h3>
+                <p class="authors">J. L. Valdés Atencio</p>
+                <p class="file-id">Archivo: SIS 016.pdf</p>
+            </div>
+            <a href="SIS 016.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>Revisión sistemática de dimensión de información en redes complejas</h3>
                 <p class="authors">J. L. Valdés Atencio, J. S. De la Cruz García, J. Bory Reyes, A. Ramírez Arellano</p>
                 <p class="file-id">Archivo: SIS 017.pdf</p>
             </div>
             <a href="SIS 017.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>El suelo desde una mirada sistémica y su efecto en la seguridad alimentaria</h3>
+                <p class="authors">L. P. León Romero, M. Aguilar Fernández, M. Francisco Márquez</p>
+                <p class="file-id">Archivo: SIS 018.pdf</p>
+            </div>
+            <a href="SIS 018.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -195,11 +245,38 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Modelo para determinar el conocimiento vial de menores de educación básica</h3>
+                <p class="authors">M. A. Morales Ramírez, F. J. Aceves-Hernández, A. Domínguez-Pacheco</p>
+                <p class="file-id">Archivo: SIS 020.pdf</p>
+            </div>
+            <a href="SIS 020.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Thermal diffusivity for Mexican edible oils in food industry</h3>
+                <p class="authors">R. Carbajal-Valdez, A. Cruz Orea, J. L. Jiménez-Pérez</p>
+                <p class="file-id">Archivo: SIS 021.pdf</p>
+            </div>
+            <a href="SIS 021.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>La Hibernación como Recurso de Supervivencia en los Sistemas Viables: Aplicación al Sistema Educativo</h3>
                 <p class="authors">F. E. Morán Ramírez, I. Badillo Piña, R. Tejeda Padilla, J. O. Ávila Arroyo...</p>
                 <p class="file-id">Archivo: SIS 022.pdf</p>
             </div>
             <a href="SIS 022.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Mejora de semillas de tomate bajo estrés salino mediante el campo electromagnético</h3>
+                <p class="authors">Domínguez Pacheco</p>
+                <p class="file-id">Archivo: SIS 023.pdf</p>
+            </div>
+            <a href="SIS 023.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -222,7 +299,25 @@
 
         <div class="article-card">
             <div class="info">
-                <h3>Hacia un Modelo de Sistema Viable para la Gestión de Estaciones de Carga de Vehículos Eléctricos</h3>
+                <h3>Modelo de Enseñanza para Educación Básica: Un enfoque sistémico y transdisciplinario</h3>
+                <p class="authors">L. Y. Villagrán-Villegas, M. Patiño-Ortiz, M. Martínez-Meza...</p>
+                <p class="file-id">Archivo: SIS 026.pdf</p>
+            </div>
+            <a href="SIS 026.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Ultrasonido y Radiadores Direccionales en el Pre-Acondicionamiento de Semillas</h3>
+                <p class="authors">O. Solano Cruz, C. Hernández Aguilar, F. A. Domínguez Pacheco...</p>
+                <p class="file-id">Archivo: SIS 027.pdf</p>
+            </div>
+            <a href="SIS 027.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Herramienta sistémica para la cuantificación de opiniones</h3>
                 <p class="authors">O. Solano Cruz, C. Hernández Aguilar, F. A. Domínguez Pacheco...</p>
                 <p class="file-id">Archivo: SIS 028.pdf</p>
             </div>
@@ -231,7 +326,16 @@
 
         <div class="article-card">
             <div class="info">
-                <h3>La Integración Agrícola y Pecuaria Como Herramienta Para la Mejora de la Circularidad</h3>
+                <h3>Hacia un Modelo de Sistema Viable para la Gestión de Estaciones de Carga de Vehículos Eléctricos</h3>
+                <p class="authors">O. Solano Cruz, C. Hernández Aguilar, F. A. Domínguez Pacheco...</p>
+                <p class="file-id">Archivo: SIS 029.pdf</p>
+            </div>
+            <a href="SIS 029.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>La Integración Agrícola y Pecuaria Como Herramienta Para la Mejora de la Circularidad: Análisis Energético</h3>
                 <p class="authors">E. M. Berdeja-Rocha, R. Tejeda-Padilla, I. Badillo-Piña...</p>
                 <p class="file-id">Archivo: SIS 030.pdf</p>
             </div>
@@ -276,11 +380,38 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Caso ESIME Unidad Zacatenco</h3>
+                <p class="authors">Alejandra Concepción Jiménez Reyes, Miguel Patiño Ortiz</p>
+                <p class="file-id">Archivo: SIS 036.pdf</p>
+            </div>
+            <a href="SIS 036.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis comparativo del desarrollo de la moda lenta frente a la moda rápida</h3>
+                <p class="authors">J. L. Alcaide Juarez, M. Patiño Ortiz, J. Patiño Ortiz</p>
+                <p class="file-id">Archivo: SIS 038.pdf</p>
+            </div>
+            <a href="SIS 038.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>La Neuroeducación: conociendo el funcionamiento cerebral para usarlo en el aula</h3>
                 <p class="authors">Humberto Dorantes Benavidez</p>
                 <p class="file-id">Archivo: SIS 039.pdf</p>
             </div>
             <a href="SIS 039.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Dominación Financiera</h3>
+                <p class="authors">Cano, Alfredo Cruz Orea</p>
+                <p class="file-id">Archivo: SIS 041.pdf</p>
+            </div>
+            <a href="SIS 041.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -321,6 +452,15 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Modelo de Optimización para Subastas de Energía Eléctrica de Mediano Plazo</h3>
+                <p class="authors">Juárez-Hernández Argelia Esperanza, Zepeda-Bautista Rosalba</p>
+                <p class="file-id">Archivo: SIS 047.pdf</p>
+            </div>
+            <a href="SIS 047.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>Control de un dispositivo de asistencia mediante movimientos oculares</h3>
                 <p class="authors">Carlos Javier Sosa Paz, Rubén Martínez López</p>
                 <p class="file-id">Archivo: SIS 048.pdf</p>
@@ -357,11 +497,29 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Análisis sistémico del proceso de producción del queso de hebra basado en la NOM-243</h3>
+                <p class="authors">Norma Esmeralda Rodriguez-Ramirez, Rosalba Zepeda-Bautista</p>
+                <p class="file-id">Archivo: SIS 053.pdf</p>
+            </div>
+            <a href="SIS 053.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>Sistema de información biométrico para la gestión del control de asistencia del personal</h3>
                 <p class="authors">J. E. Montoya Montes, H. Dorantes Benavidez, M. A. Martínez Cruz</p>
                 <p class="file-id">Archivo: SIS 054.pdf</p>
             </div>
             <a href="SIS 054.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Sistemas de gestión de calidad e inocuidad en las organizaciones</h3>
+                <p class="authors">I. Reyes Benitez, L. Rodriguez Páez, O. A. Negrete Pérez</p>
+                <p class="file-id">Archivo: SIS 055.pdf</p>
+            </div>
+            <a href="SIS 055.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -375,20 +533,47 @@
 
         <div class="article-card">
             <div class="info">
-                <h3>Metodología Sistémica para el Diseño Estratégico en Áreas Naturales Protegidas</h3>
+                <h3>Análisis sistémico para comparar voz natural contra sintetizada</h3>
                 <p class="authors">Acevedo Sánchez Brenda, Hernández Hernández Claudia</p>
-                <p class="file-id">Archivo: SIS 081.pdf</p>
+                <p class="file-id">Archivo: SIS 058.pdf</p>
             </div>
-            <a href="SIS 081.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+            <a href="SIS 058.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Simulaciones Energéticas de Azoteas Verdes con Germinados de Lenteja</h3>
+                <p class="authors">Gallegos Castillo Alexis, Marcial Margarito Sánchez Sánchez</p>
+                <p class="file-id">Archivo: SIS 060.pdf</p>
+            </div>
+            <a href="SIS 060.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Metodología Sistémica para el Diseño Estratégico en Áreas Naturales Protegidas</h3>
+                <p class="authors">Juana Isabel Méndez, Claudia Hernández-Aguilar...</p>
+                <p class="file-id">Archivo: SIS 061.pdf</p>
+            </div>
+            <a href="SIS 061.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelo Ecológico de Bronfenbrenner en la Salud Mental</h3>
+                <p class="authors">B. Katherine Franco, Claudia Hernández Aguilar</p>
+                <p class="file-id">Archivo: SIS 062.pdf</p>
+            </div>
+            <a href="SIS 062.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
             <div class="info">
                 <h3>Análisis de Rentabilidad de un Sistema Solar Fotovoltaico Conectado a la Red de CFE</h3>
-                <p class="authors">B. Katherine Franco, Claudia Hernández Aguilar</p>
-                <p class="file-id">Archivo: SIS 083.pdf</p>
+                <p class="authors">B. Cortés-Martínez, A. Acosta-Banda, L. Echavarría Difur...</p>
+                <p class="file-id">Archivo: SIS 063.pdf</p>
             </div>
-            <a href="SIS 083.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+            <a href="SIS 063.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -411,11 +596,56 @@
 
         <div class="article-card">
             <div class="info">
+                <h3>Equipo para Clasificar por Tamaño y Color el Grano de Maíz</h3>
+                <p class="authors">Aarón Morales Calderón, Héctor Velázquez Domínguez...</p>
+                <p class="file-id">Archivo: SIS 066.pdf</p>
+            </div>
+            <a href="SIS 066.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Estimación de porosidad en pan adicionado con moringa mediante visión artificial</h3>
+                <p class="authors">Jonathan Vargas-Muñoz, Rosalba Zepeda-Bautista...</p>
+                <p class="file-id">Archivo: SIS 067.pdf</p>
+            </div>
+            <a href="SIS 067.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Evaluación de la conciencia situacional en la conducción de motociclista: un enfoque</h3>
+                <p class="authors">Otoniel Igno-Rosario, Claudia Hernández-Aguilar...</p>
+                <p class="file-id">Archivo: SIS 068.pdf</p>
+            </div>
+            <a href="SIS 068.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Aplicación de la Metodología de Sistemas Suaves en la problemática de la conciencia</h3>
+                <p class="authors">Isala Eisabel Morales-Ramírez, Claudia Lizbeth Martínez-G...</p>
+                <p class="file-id">Archivo: SIS 069.pdf</p>
+            </div>
+            <a href="SIS 069.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
                 <h3>Modelos de corrupción en la industria: revisión sistemática de literatura</h3>
                 <p class="authors">Felipe de Jesús Dorantes Benavidez, Sandra González Vargas</p>
                 <p class="file-id">Archivo: SIS 071.pdf</p>
             </div>
             <a href="SIS 071.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis sistemático de avances tecnológicos a nivel global y nacional de calentadores</h3>
+                <p class="authors">Nandy Nelly Rodriguez Hernández, Claudia Lizbeth Martínez...</p>
+                <p class="file-id">Archivo: SIS 072.pdf</p>
+            </div>
+            <a href="SIS 072.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
         <div class="article-card">
@@ -436,7 +666,7 @@
             <a href="SIS 074.pdf" class="btn-pdf" target="_blank">VER PDF</a>
         </div>
 
-        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 CNIES | Ingeniería de Sistemas | ESIME Zacatenco | IPN</p>
