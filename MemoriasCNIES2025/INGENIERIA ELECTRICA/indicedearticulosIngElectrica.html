@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Artículos - Ingeniería Eléctrica CNIES 2025</title>
+    <style>
+        :root {
+            --primary: #800000; /* Guinda IPN */
+            --accent: #27AE60;  /* Verde ESIME */
+            --bg: #F8F9FA;
+            --text-main: #212529;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-logos { display: flex; align-items: center; gap: 15px; }
+        .nav-logos img { height: 45px; }
+        .btn-back { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .btn-back:hover { color: var(--accent); }
+
+        .section-header {
+            background: linear-gradient(rgba(128,0,0,0.85), rgba(128,0,0,0.85)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; color: white; padding: 4rem 1rem; text-align: center;
+        }
+
+        .search-container { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
+        #searchInput {
+            width: 100%; padding: 15px 25px; border-radius: 30px; border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
+        }
+
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
+        .article-card {
+            background: white; margin-bottom: 12px; padding: 20px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr auto;
+            align-items: center; gap: 20px; transition: 0.3s; border-left: 5px solid #ddd;
+        }
+        .article-card:hover { transform: translateX(5px); border-left-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .info h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 5px; text-transform: uppercase; }
+        .info .authors { font-style: italic; color: #444; font-size: 0.9rem; margin-bottom: 4px; }
+        .info .file-id { font-family: monospace; color: #888; font-size: 0.8rem; }
+
+        .btn-pdf {
+            background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px;
+            text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-pdf:hover { background: #600000; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            .article-card { grid-template-columns: 1fr; }
+            .btn-pdf { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logos">
+            <img src="../logo-ipn-horizontal.svg" alt="IPN">
+            <img src="../esime-1.jpg" alt="ESIME">
+        </div>
+        <a href="../index.html" class="btn-back">← Volver al Menú Principal</a>
+    </nav>
+
+    <header class="section-header">
+        <h1>Ingeniería Eléctrica</h1>
+        <p>Memorias del Congreso Nacional de Ingeniería y Estudios Superiores 2025</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Filtrar por título, autor o clave (ej: ELE 005)..." onkeyup="filterArticles()">
+    </div>
+
+    <div class="container" id="articleList">
+        
+        <div class="article-card">
+            <div class="info">
+                <h3>Desarrollo del Modelo Equivalente de Una Planta Solar Con el Método de Enjambre de Partículas</h3>
+                <p class="authors">Mauricio Calderón Gómez, David Uzziel Cuadra Flores, Alejandro Villegas Ortega, Daniel Ruiz Vega</p>
+                <p class="file-id">Archivo: ELE 001.pdf</p>
+            </div>
+            <a href="ELE 001.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Perfiles de Campos Electromagnéticos en Líneas de Transmisión Convencionales y No Convencionales</h3>
+                <p class="authors">Rodrigo Espinosa Roa, Sebastián Dalí Medina, Carlos Tejada Martínez, Fermín P. Espino Cortés</p>
+                <p class="file-id">Archivo: ELE 002.pdf</p>
+            </div>
+            <a href="ELE 002.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Ruido Audible en Líneas de Transmisión de Doble Circuito: Casos de Estudio en México e Italia</h3>
+                <p class="authors">Carlos Tejada Martinez, Fermin P. Espino Cortés, Eliseo Morales Figueroa</p>
+                <p class="file-id">Archivo: ELE 003.pdf</p>
+            </div>
+            <a href="ELE 003.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Desarrollo de Modelos Genéricos de Generadores Renovables Para Estudios de Estabilidad</h3>
+                <p class="authors">Christopher Emanuel Reyes-Valencia, Mohamed Badaoui, Daniel Ruiz-Vega</p>
+                <p class="file-id">Archivo: ELE 004.pdf</p>
+            </div>
+            <a href="ELE 004.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Análisis de Corrientes Corona en Línea Híbrida de Alta Tensión 320kV HVAC y ±500kV HVDC mediante configuración Punta-Plano</h3>
+                <p class="authors">Martinez Ramos Jorge Miguel, Linares y Miranda Roberto, Espino Cortes Fermín Pascual</p>
+                <p class="file-id">Archivo: ELE 005.pdf</p>
+            </div>
+            <a href="ELE 005.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Bloqueo por Oscilación de Potencia</h3>
+                <p class="authors">Martínez Mariscal Ricardo, David Sebastián Baltazar</p>
+                <p class="file-id">Archivo: ELE 006.pdf</p>
+            </div>
+            <a href="ELE 006.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Despacho Económico mediante Aprendizaje Reforzado: Un enfoque basado en Inteligencia Artificial</h3>
+                <p class="authors">Diana Aidet Del Razo Ojeda, David Romero Romero</p>
+                <p class="file-id">Archivo: ELE 007.pdf</p>
+            </div>
+            <a href="ELE 007.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Desconexión de líneas de transmisión en una red eléctrica y su impacto en los flujos de potencia durante la presencia de fenómenos naturales</h3>
+                <p class="authors">Emmanuel Lopez-Gutierrez, Jorge Sanchez-Jaime, Ofelio Gaona-Lopez, Julio Cesar Santana-Becerril</p>
+                <p class="file-id">Archivo: ELE 008.pdf</p>
+            </div>
+            <a href="ELE 008.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Flujos óptimos de potencia en corriente alterna utilizando AMPL</h3>
+                <p class="authors">Octavio López Hernández, David Romero Romero, Mohamed Badaoui</p>
+                <p class="file-id">Archivo: ELE 009.pdf</p>
+            </div>
+            <a href="ELE 009.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Monitoreo y evaluación de protección diferencial y de distancia en los relevadores SEL 311L para fallas trifásicas</h3>
+                <p class="authors">Mario Isaac Espejel Gonzales, Imberth Adrian Lopez Garcia, Dr. David Sebastián Baltazar</p>
+                <p class="file-id">Archivo: ELE 010.pdf</p>
+            </div>
+            <a href="ELE 010.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Programación Cónica de Segundo Orden Para la Solución de Flujos Óptimos de Potencia</h3>
+                <p class="authors">Alan Ortiz Contreras, Mohamed Badaoui, David Sebastián Baltazar</p>
+                <p class="file-id">Archivo: ELE 011.pdf</p>
+            </div>
+            <a href="ELE 011.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Protección de Fallas Fase-Fase del Generador</h3>
+                <p class="authors">Martínez Mariscal Ricardo, David Sebastián Baltazar</p>
+                <p class="file-id">Archivo: ELE 012.pdf</p>
+            </div>
+            <a href="ELE 012.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Evaluación del Tiempo de Vuelo de un Avión Eléctrico</h3>
+                <p class="authors">Carlos Vázquez Teopa, Christian Alessandro Hernández García, Alejandro Villegas Ortega, Daniel Ruiz Vega</p>
+                <p class="file-id">Archivo: ELE 013.pdf</p>
+            </div>
+            <a href="ELE 013.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Cálculo de las Pérdidas de Potencia en Líneas de Transmisión Convencionales y No Convencionales</h3>
+                <p class="authors">Milton Edwin Cervantes Bautista, Carlos Tejada Martínez, Fermín P. Espino Cortés</p>
+                <p class="file-id">Archivo: ELE 014.pdf</p>
+            </div>
+            <a href="ELE 014.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Impacto de un Compensador estático de VARS en un sistema eléctrico de potencia</h3>
+                <p class="authors">Sofia Gálvez Dominguez, Jaime Alexis Fernandez Ruiz, Dr. Jaime Robles Garcia, Dr. Carlos Alberto Castillo Guillen</p>
+                <p class="file-id">Archivo: ELE 015.pdf</p>
+            </div>
+            <a href="ELE 015.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelado no lineal y promedio del inversor monofásico fuente de corriente, en cálculo simbólico computacional</h3>
+                <p class="authors">Aquino Robles, José Antonio, Fernández Nava Cecilia, Corona R. Leonel G.</p>
+                <p class="file-id">Archivo: ELE 016.pdf</p>
+            </div>
+            <a href="ELE 016.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Detección de Cortocircuitos entre Vueltas de Devanados de Transformadores por Medio de Técnicas No-Convencionales</h3>
+                <p class="authors">Paulina Bravo Ortega, R. Hativé Domínguez Adame, Fermín P. Espino Cortés, Rodrigo Ocón Valdez</p>
+                <p class="file-id">Archivo: ELE 017.pdf</p>
+            </div>
+            <a href="ELE 017.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Optimización robusta: Metodología y aplicación</h3>
+                <p class="authors">Victor Manuel Blanca Carrera, Mohamed Badaoui, David Sebastián Baltazar</p>
+                <p class="file-id">Archivo: ELE 018.pdf</p>
+            </div>
+            <a href="ELE 018.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelado y simulación de rectificador monofásico PWM, alimentado con CA no senoidal, usando álgebra simbólica computacional</h3>
+                <p class="authors">Aquino Robles José Antonio, Fernández Nava Cecilia, Corona R. Leonel G.</p>
+                <p class="file-id">Archivo: ELE 019.pdf</p>
+            </div>
+            <a href="ELE 019.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelado y simulación de rectificador monofásico PWM, alimentado con CA no senoidal, usando álgebra simbólica computacional (Variante II)</h3>
+                <p class="authors">Arturo Rangel Merino, José Luis Delgado, Roberto Linares y Miranda</p>
+                <p class="file-id">Archivo: ELE 020.pdf</p>
+            </div>
+            <a href="ELE 020.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+        <div class="article-card">
+            <div class="info">
+                <h3>Modelado y Análisis del Desempeño No-Lineal de un Reactor en Derivación de 400 kV</h3>
+                <p class="authors">Ana Andrea Moran Acevedo, Brayan Fernando Hidalgo Cruz, Fermin Pascual Espino Cortés, Rodrigo Ocón Valdez</p>
+                <p class="file-id">Archivo: ELE 021.pdf</p>
+            </div>
+            <a href="ELE 021.pdf" class="btn-pdf" target="_blank">VER PDF</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CNIES | Ingeniería Eléctrica | ESIME Zacatenco | IPN</p>
+    </footer>
+
+    <script>
+        function filterArticles() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('article-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let content = cards[i].innerText.toLowerCase();
+                cards[i].style.display = content.includes(input) ? "grid" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
