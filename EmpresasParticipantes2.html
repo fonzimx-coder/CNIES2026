@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Empresas CNIES 2026</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; color: #222; }
+    .empresa { display: inline-block; margin: 15px; text-align: center; }
+    .empresa img { width: 120px; cursor: pointer; }
+    .empresa h2 { margin: 10px 0 0; font-size: 1.1em; color: #333; }
+
+    /* Fondo oscuro con transición */
+    .modal-overlay {
+      visibility: hidden;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .modal-overlay.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Caja modal */
+    .modal {
+      background: #fff;
+      width: 60%;
+      max-width: 600px;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+      text-align: center;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    .modal-overlay.show .modal {
+      transform: scale(1);
+    }
+
+    /* Botón de cierre */
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .modal img {
+      max-width: 200px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Empresas y Sociedades - CNIES 2026</h1>
+
+  <!-- 15 Empresas -->
+  <div class="empresa"><img src="logos_cnies2026/cener.jpeg" alt="CENER logo" data-info="Empresa 100% mexicana especializada en proyectos integrales de ingeniería eléctrica, enfocada en seguridad, eficiencia y calidad de la energía." data-logo="logos_cnies2026/cener.jpeg"><h2>CENER</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/TotalGround.jpg" alt="TOTAL GROUND logo" data-info="Empresa mexicana dedicada a sistemas de tierras físicas, pararrayos y protección eléctrica, con presencia internacional." data-logo="logos_cnies2026/TotalGround.jpg"><h2>Total Ground</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/logo_Schneider_Electric_logotype_green.svg" alt="Schneider Electric logo" data-info="Líder mundial en gestión de energía y automatización, con soluciones para eficiencia y sostenibilidad." data-logo="logos_cnies2026/logo_Schneider_Electric_logotype_green.svg"><h2>Schneider Electric</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/sigtronic-logo-vertical.webp" alt="Sigtronic logo" data-info="Marca mexicana especializada en conectividad y aislamiento para distribución de energía eléctrica." data-logo="logos_cnies2026/sigtronic-logo-vertical.webp"><h2>Sigtronic</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/Fonkel.jpg" alt="Fonkel logo" data-info="Proveedor de soluciones de medición, control y protección eléctrica con más de 40 años de experiencia." data-logo="logos_cnies2026/Fonkel.jpg"><h2>Fonkel Mexicana</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/Viakon.svg" alt="Viakon logo" data-info="Fabricante líder de conductores eléctricos en México, parte del Grupo Xignux." data-logo="logos_cnies2026/Viakon.svg"><h2>Viakon</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/Moeltek.png" alt="Moeltek logo" data-info="Integrador de tableros eléctricos de baja y media tensión, con certificaciones ISO y ANCE." data-logo="logos_cnies2026/Moeltek.png"><h2>Moeltek</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/Gimim.png" alt="GIMIM logo" data-info="Grupo de Instrumentación y Medición Industrial de México, especializado en metrología y calibración." data-logo="logos_cnies2026/Gimim.png"><h2>GIMIM</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/Logo Huawei 2026.png" alt="Huawei logo" data-info="Multinacional de telecomunicaciones y TIC, con presencia en más de 170 países." data-logo="logos_cnies2026/Logo Huawei 2026.png"><h2>Huawei</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/ZekeElectricalPower2021-03-03130347.png" alt="ZEKE Electrical Power logo" data-info="Empresa mexicana especializada en sistemas de excitación y protección para generación eléctrica." data-logo="logos_cnies2026/ZekeElectricalPower2021-03-03130347.png"><h2>Zeke Electrical Power</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/ieeeZacatenco.jpg" alt="IEEE Student Branch logo" data-info="Unidad universitaria de IEEE que conecta estudiantes con proyectos técnicos y profesionales." data-logo="logos_cnies2026/ieeeZacatenco.jpg"><h2>IEEE Rama Estudiantil</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/ieee_wie_purple.webp" alt="IEEE WIE logo" data-info="Red global que promueve la participación de mujeres en ingeniería y ciencias." data-logo="logos_cnies2026/ieee_wie_purple.webp"><h2>IEEE Women in Engineering (WIE)</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/IEEEPES.webp" alt="IEEE PES logo" data-info="Sociedad técnica líder en energía eléctrica, dedicada a generación, transmisión y distribución." data-logo="logos_cnies2026/IEEEPES.webp"><h2>IEEE Power & Energy Society (PES)</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/RAS-IEEE.webp" alt="IEEE RAS logo" data-info="Sociedad técnica de IEEE enfocada en robótica y automatización." data-logo="logos_cnies2026/RAS-IEEE.webp"><h2>IEEE Robotics and Automation Society (RAS)</h2></div>
+  <div class="empresa"><img src="logos_cnies2026/GENER.jpeg" alt="GENER logo" data-info="Empresa de generación eléctrica, parte de AES Andes, con proyectos hidroeléctricos y termoeléctricos." data-logo="logos_cnies2026/GENER.jpeg"><h2>GENER</h2></div>
+<div class="empresa"><img src="logos_cnies2026/TECNOREN.jpeg" alt="TECNOREN logo" data-info="Empresa enfocada en el desarrollo de soluciones tecnológicas aplicadas a la automatización, la robótica y la electrónica." data-logo="logos_cnies2026/TECNOREN.jpeg"><h2>TECNOREN</h2></div>
+
+
+  <!-- Overlay + Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <img id="modalLogo" src="" alt="Logo grande">
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModal = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const modalLogo = document.getElementById('modalLogo');
+
+    // Abrir modal al hacer clic en logo
+    document.querySelectorAll('.empresa img').forEach(img => {
+      img.addEventListener('click', function() {
+        modalTitle.textContent = this.alt.replace(" logo", "");
+        modalText.textContent = this.getAttribute('data-info');
+        modalLogo.src = this.getAttribute('data-logo');
+        modalOverlay.classList.add('show');
+      });
+    });
+
+    // Cerrar modal con botón
+    closeModal.addEventListener('click', function() {
+      modalOverlay.classList.remove('show');
+    });
+
+    // Cerrar modal al hacer clic fuera
+    window.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    img {
+      max-width: 100%;   /* nunca excede el ancho del contenedor */
+      height: auto;      /* mantiene la proporción */
+      display: block;    /* evita espacios extra alrededor */
+      margin: 0 auto;    /* centra la imagen */
+    }
+  </style>
+</head>
+<body>
+ 
+  <img src="logos_cnies2026/Croquis Congreso-1.jpg" alt="Croquis Congreso">
+</body>
+</html>
