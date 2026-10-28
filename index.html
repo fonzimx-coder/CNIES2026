@@ -140,44 +140,113 @@
 
     
 <!-- Programas por dias  -->
-<!-- Sección: Programa por días -->
-<div class="programa-container">
-  <h2> Programa por días:</h2>
+<style>
+  .grid-programa-container {
+    max-width: 900px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  .grid-programa-container h2 {
+    color: #1b4332;
+    margin-bottom: 20px;
+  }
+  .dias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .card-dia {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-dia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+  }
+  .card-dia h3 {
+    margin: 0 0 12px 0;
+    color: #1b4332;
+    font-size: 18px;
+    border-bottom: 2px solid #2a9d8f;
+    padding-bottom: 6px;
+  }
+  .card-dia .acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-btn {
+    display: block;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .card-btn-pdf {
+    background-color: #ffeeee;
+    color: #c1121f !important;
+    border: 1px solid #f8d7da;
+  }
+  .card-btn-pdf:hover {
+    background-color: #c1121f;
+    color: #ffffff !important;
+  }
+  .card-btn-html {
+    background-color: #e8f5e9;
+    color: #1b4332 !important;
+    border: 1px solid #c8e6c9;
+  }
+  .card-btn-html:hover {
+    background-color: #2a9d8f;
+    color: #ffffff !important;
+  }
+</style>
 
-  <!-- Día 1 -->
-  <div class="dia-item">
-    <h3>Día 1</h3>
-    <ul>
-      <li><a href="ProgramasporDias/Dia1.pdf" target="_blank" rel="noopener noreferrer">Ver PDF del Día 1</a></li>
-      <li><a href="ProgramasporDias/ProgramaDia1.html" target="_blank">Ver página HTML del Día 1</a></li>
-    </ul>
-  </div>
+<div class="grid-programa-container">
+  <h2>Programa por días:</h2>
+  
+  <div class="dias-grid">
+    <!-- Día 1 -->
+    <div class="card-dia">
+      <h3>Día 1</h3>
+      <div class="acciones">
+        <a href="ProgramasporDias/Dia1.pdf" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-pdf">📄 Abrir PDF</a>
+        <a href="ProgramasporDias/ProgramaDia1.html" target="_blank" class="card-btn card-btn-html">🌐 Ver Página HTML</a>
+      </div>
+    </div>
 
-  <!-- Día 2 -->
-  <div class="dia-item">
-    <h3>Día 2</h3>
-    <ul>
-      <li><a href="ProgramasporDias/Dia2.pdf" target="_blank" rel="noopener noreferrer">Ver PDF del Día 2</a></li>
-      <li><a href="ProgramasporDias/ProgramaDia2.html" target="_blank">Ver página HTML del Día 2</a></li>
-    </ul>
-  </div>
+    <!-- Día 2 -->
+    <div class="card-dia">
+      <h3>Día 2</h3>
+      <div class="acciones">
+        <a href="ProgramasporDias/Dia2.pdf" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-pdf">📄 Abrir PDF</a>
+        <a href="ProgramasporDias/ProgramaDia2.html" target="_blank" class="card-btn card-btn-html">🌐 Ver Página HTML</a>
+      </div>
+    </div>
 
-  <!-- Día 3 -->
-  <div class="dia-item">
-    <h3>Día 3</h3>
-    <ul>
-      <li><a href="ProgramasporDias/Dia3.pdf" target="_blank" rel="noopener noreferrer">Ver PDF del Día 3</a></li>
-      <li><a href="ProgramasporDias/ProgramaDia3.html" target="_blank">Ver página HTML del Día 3</a></li>
-    </ul>
-  </div>
+    <!-- Día 3 -->
+    <div class="card-dia">
+      <h3>Día 3</h3>
+      <div class="acciones">
+        <a href="ProgramasporDias/Dia3.pdf" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-pdf">📄 Abrir PDF</a>
+        <a href="ProgramasporDias/ProgramaDia3.html" target="_blank" class="card-btn card-btn-html">🌐 Ver Página HTML</a>
+      </div>
+    </div>
 
-  <!-- Día 4 -->
-  <div class="dia-item">
-    <h3>Día 4</h3>
-    <ul>
-      <li><a href="ProgramasporDias/Dia4.pdf" target="_blank" rel="noopener noreferrer">Ver PDF del Día 4</a></li>
-      <li><a href="ProgramasporDias/ProgramaDia4.html" target="_blank">Ver página HTML del Día 4</a></li>
-    </ul>
+    <!-- Día 4 -->
+    <div class="card-dia">
+      <h3>Día 4</h3>
+      <div class="acciones">
+        <a href="ProgramasporDias/Dia4.pdf" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-pdf">📄 Abrir PDF</a>
+        <a href="ProgramasporDias/ProgramaDia4.html" target="_blank" class="card-btn card-btn-html">🌐 Ver Página HTML</a>
+      </div>
+    </div>
   </div>
 </div>
 
